@@ -1,0 +1,149 @@
+:root {
+  --dark-blue: hsl(221, 59%, 26%);
+  --darker-blue: hsl(221, 59%, 16%);
+  --orange: hsl(34, 100%, 52%);
+  --dark-orange: hsl(34, 100%, 38%);
+  --off-white: hsl(52, 91%, 83%);
+  --off-black: hsl(0, 11%, 12%);
+}
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+html {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  margin: 0;
+  background-color: var(--dark-blue);
+  color: var(--off-white);
+}
+
+a {
+  all: unset;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  /* border: 1px solid white; */
+}
+
+.initial-font-resize {
+  font-size: 1.1em;
+}
+
+.orange {
+  color: var(--orange);
+}
+
+.dark-orange {
+  color: var(--dark-orange);
+}
+
+.upscale-fs {
+  font-size: 110%;
+}
+
+.margin-top {
+  margin-top: 0.8em;
+}
+
+.top-nav-bar {
+  width: 100%;
+  display: flex;
+  /* border: 1px solid white; */
+}
+
+.top-nav-bar ul {
+  width: 100%;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+.top-nav-bar li:hover {
+  cursor: pointer;
+  color: var(--orange);
+  text-decoration: underline;
+}
+
+.flex-ctr-x {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+/* .grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+} */
+
+.flex-ctr-y {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+#prof-pic-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+  min-width: fit-content;
+}
+
+#prof-pic {
+  height: 300px;
+  width: auto;
+  z-index: 1;
+}
+
+.circle {
+  background: radial-gradient(var(--off-white) 50%, var(--dark-blue) 70%);
+  border-radius: 50%;
+  position: absolute;
+  width: 255px;
+  height: 255px;
+  max-width: 90%;
+}
+
+.white-info-stretch {
+  min-height: 120px;
+  text-align: justify;
+  margin-top: 1em;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  color: var(--darker-blue);
+  background-color: hsl(42, 100%, 100%);
+  width: 100%;
+}
+
+.white-info-stretch img {
+  width: 69px;
+}
+
+.white-info-stretch > div {
+  display: flex;
+  padding: 5px;
+  min-height: 85px;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 1em;
+  border: 1px solid grey;
+  box-shadow: 1px 2px 5px darkslategray;
+  font-size: 15px;
+  /* border: 1px solid brown; */
+}
