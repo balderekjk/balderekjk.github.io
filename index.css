@@ -10,6 +10,7 @@
 html {
   box-sizing: border-box;
 }
+
 *,
 *:before,
 *:after {
@@ -25,16 +26,20 @@ html {
   color: var(--off-white);
 }
 
-a {
+nav a {
   all: unset;
 }
 
 h1,
 h2,
 h3,
-h4 {
+h4,
+p {
   margin: 0;
-  /* border: 1px solid white; */
+}
+
+h2 {
+  text-align: center;
 }
 
 .initial-font-resize {
@@ -54,13 +59,12 @@ h4 {
 }
 
 .margin-top {
-  margin-top: 0.8em;
+  margin-top: 10px;
 }
 
 .top-nav-bar {
   width: 100%;
   display: flex;
-  /* border: 1px solid white; */
 }
 
 .top-nav-bar ul {
@@ -71,10 +75,13 @@ h4 {
   justify-content: space-around;
 }
 
+.top-nav-bar li {
+  transition: color 160ms ease-in-out;
+}
+
 .top-nav-bar li:hover {
   cursor: pointer;
   color: var(--orange);
-  text-decoration: underline;
 }
 
 .flex-ctr-x {
@@ -83,12 +90,8 @@ h4 {
   align-items: center;
   text-align: center;
   flex-wrap: wrap;
+  overflow: hidden;
 }
-
-/* .grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-} */
 
 .flex-ctr-y {
   display: flex;
@@ -121,6 +124,7 @@ h4 {
 }
 
 .white-info-stretch {
+  gap: 2em;
   min-height: 120px;
   text-align: justify;
   margin-top: 1em;
@@ -131,19 +135,123 @@ h4 {
   width: 100%;
 }
 
-.white-info-stretch img {
-  width: 69px;
+.icon {
+  width: 73px;
+  transition: all 0.1s ease-in-out;
 }
 
-.white-info-stretch > div {
-  display: flex;
-  padding: 5px;
+.white-info-stretch .icon:hover {
+  transform: rotate(0.03turn);
+  scale: 0.9;
+}
+
+.white-info-stretch > .flex-ctr-x {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 73px);
   min-height: 85px;
+  padding: 5px;
   flex-direction: column;
   justify-content: space-around;
-  margin: 1em;
   border: 1px solid grey;
   box-shadow: 1px 2px 5px darkslategray;
   font-size: 15px;
-  /* border: 1px solid brown; */
+}
+
+.project-box {
+  display: flex;
+  flex-direction: column;
+  width: 592px;
+  min-height: 400px;
+  height: fit-content;
+  outline: 1px solid var(--darker-blue);
+  gap: 10px;
+  padding: 0 5px;
+}
+
+.project-box img {
+  border-radius: 5px;
+  border: 2px solid var(--dark-blue);
+}
+
+.mobile-project-img {
+  position: relative;
+  left: 75%;
+  bottom: 280px;
+  margin-bottom: -280px;
+  max-width: 140px;
+  box-shadow: 5px 5px 6px grey;
+}
+
+#back-to-top {
+  padding: 2px;
+  border: 2px solid var(--dark-blue);
+  border-radius: 2px;
+  color: var(--dark-blue);
+  background: radial-gradient(white, skyblue);
+  text-decoration: none;
+  z-index: 999;
+}
+
+#email-form {
+  background: hsl(230, 100%, 95%);
+  color: var(--darker-blue);
+  box-shadow: 0px 4px 7px grey;
+}
+
+input,
+textarea {
+  font-size: 14px;
+}
+
+#email-form,
+#email-form > input,
+textarea {
+  border: 1px solid var(--dark-blue);
+  padding: 7px;
+  margin: 7px 0;
+  width: 320px;
+}
+
+#email-form button {
+  color: var(--darker-blue);
+  border-radius: 3px;
+  border: 1px solid var(--dark-blue);
+  background: linear-gradient(white, hsl(230, 100%, 83%));
+  padding: 2px 6px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+#email-form button:hover {
+  background-image: linear-gradient(white, hsl(230, 100%, 73%));
+}
+
+footer a {
+  color: var(--off-white);
+  text-decoration: none;
+  transition: color 160ms ease-in-out;
+}
+
+footer a:hover {
+  color: var(--orange);
+}
+
+@media screen and (max-width: 600px) {
+  .project-box {
+    width: 98vw;
+  }
+
+  .mobile-project-img {
+    max-width: 23vw;
+    bottom: 46vw;
+    margin-bottom: -46vw;
+  }
+}
+
+@media screen and (max-width: 334px) {
+  #email-form,
+  #email-form > input,
+  textarea {
+    width: 96vw;
+  }
 }
